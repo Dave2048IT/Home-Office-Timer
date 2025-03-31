@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XP Timer mit Home-office Levels</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>XP Timer mit<br>
+            Home-office Levels</h1>
+        <p>Arbeite und steigere deinen Fortschritt!</p>
+        <p>Jeder Button hat seinen eigenen Sound. Check it out!</p>
+        <h3>Deine Zeit für den heutigen Tag:</h3>
+        <div class="time" id="timer">00:00:00</div>
+        <hr>
+        <h3>Globaler Fortschritt:</h3>
+        <div class="level">Level: <span id="level">0</span></div>
+        <div class="xp">XP: <span id="xp">0</span></div>
+        <hr>
+
+        <h3>Dein Name oder Modus für den Fortschritt:</h3>
+        <div class="input-container">
+            <input type="text" id="userName" placeholder="Gib deinen Namen ein" class="input-field">
+            <button class="button solved" id="loadNameButton">Laden / Neue Datei</button>
+        </div>
+
+        <div class="message" id="reminderMessage"></div>
+        <div class="progress-bar">
+            <div class="progress" id="progress" style="width: 0%"></div>
+        </div>
+
+        <button class="button start" id="startButton" onclick="playSound('start')">Start</button>
+        <button class="button pause" id="pauseButton" onclick="playSound('pause')" disabled>Pause</button>
+        <button class="button reset" id="resetButton" onclick="playSound('reset')">Reset</button>
+        <hr>
+        <button class="button ghost" onclick="playSound('ghost')">Buu Huu</button>
+        <button class="button bowser" onclick="playSound('bowser')">Bowser</button>
+        <button class="button item" onclick="playSound('item')">Item</button>
+        <button class="button solved" onclick="playSound('solved')">Rätsel gelöst</button>
+        <button class="button task-done" onclick="playSound('task_done')">Level geschafft!</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

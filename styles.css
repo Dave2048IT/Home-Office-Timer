@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f4f6;
+}
+.container {
+    max-width: clamp(20rem, 80%, 37.5rem); /* Passt sich flexibel an */
+    margin: clamp(1rem, 5vw, 2.5rem) auto;
+    background: #fff;
+    border-radius: clamp(0.5rem, 2vw, 0.75rem);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    padding: clamp(1rem, 4vw, 1.875rem);
+    text-align: center;
+}
+h1 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: #4CAF50;
+    margin-bottom: clamp(0.75rem, 2vw, 1.25rem);
+}
+.input-field {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+.time {
+    font-size: clamp(1.75rem, 5vw, 2.25rem);
+    font-weight: bold;
+    margin-top: clamp(0.5rem, 1vw, 0.625rem);
+}
+.button {
+    padding: clamp(0.5rem, 1.5vw, 0.75rem) clamp(1rem, 5vw, 1.875rem);
+    margin-top: clamp(0.75rem, 2vw, 1.25rem);
+    border-radius: clamp(0.25rem, 1vw, 0.375rem);
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+}
+.start { background: #4CAF50; }
+.pause { background: #007dab; }
+.reset { background: #F44336; }
+.ghost { background: purple; }
+.solved { background: #008CBA; }
+.bowser { background: orange; color: black; }
+.task-done { background: #FFD700; color: black; }
+.item { text-shadow: 2px 2px 4px black;
+    background-image: linear-gradient( 45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3, #ff0000 ); }
+.button:hover { opacity: 0.8; }
+.progress-bar {
+    height: clamp(0.75rem, 3vw, 1.25rem);
+    width: 100%;
+    background: #e0e0e0;
+    border-radius: clamp(0.5rem, 1.5vw, 0.625rem);
+    margin-top: clamp(0.75rem, 2vw, 1.25rem);
+}
+.progress {
+    height: 100%;
+    background: #4CAF50;
+    border-radius: clamp(0.5rem, 1.5vw, 0.625rem);
+    transition: width 0.5s;
+}
+.xp, .level {
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    color: #333;
+    margin-top: clamp(0.5rem, 1.5vw, 0.9375rem);
+}
+.level { font-size: clamp(1.5rem, 4vw, 1.75rem); }
+.message {
+    font-size: clamp(1rem, 3vw, 1.125rem);
+    margin-top: clamp(0.75rem, 2vw, 1.25rem);
+    font-weight: bold;
+    color: #FF6347;
+}
