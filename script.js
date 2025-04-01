@@ -1,7 +1,9 @@
 let userName = '';
+let reminderTimeout = null;
 let xp = 0;
 let lastTime = 0;
 let lastLevel = 0;
+let lastTimerStage = 0;
 let pausedTime = 0;
 let timer_stage = 0;
 let timeElapsed = 0;
@@ -121,9 +123,14 @@ function checkForReminder() {
         handleEightHourReminder();
         timer_stage = 3;
     }
-    setTimeout(() => reminderMessage.textContent = "", 15000);
-}
 
+    if (timer_stage !== lastTimerStage) {
+        clearTimeout(reminderTimeout); // Löscht den vorherigen Timeout
+        reminderTimeout = setTimeout(() => reminderMessage.textContent = "", 15000);
+
+        lastTimerStage = timer_stage;
+    }
+}
 
 // Nintendo-Sounds je nach Aktion abspielen
 function playSound(type = '', fromMyInstantsCom = true) {
@@ -149,8 +156,9 @@ function playSound(type = '', fromMyInstantsCom = true) {
     
     const audio = new Audio((fromMyInstantsCom ? baseUrl : '') + sounds[type]);
 
+    audio.volume = 0.5; // Lautstärke auf 50% setzen
     if (type !== 'bowser') {
-        audio.volume = 0.4; // Lautstärke auf 40% setzen
+        audio.volume = 0.2;
     };
     audio.play();
 
@@ -244,6 +252,7 @@ function loadProgress() {
     if (savedDate !== currentDate) {
         alert("Ein schöner neuer Tag beginnt. :-)");
         timeElapsed = 0;
+        timer_stage = 0;
         saveProgress();
     }
     updateTimerDisplay();
